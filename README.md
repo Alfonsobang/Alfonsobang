@@ -18,7 +18,7 @@ My public work is intentionally centered on resources that can be reviewed, reus
 
 ## Current Public Work
 
-- Maintaining [Awesome LLM Training Data v0.1.0](https://github.com/Alfonsobang/awesome-llm-training-data/releases/tag/v0.1.0), including practitioner guides for data quality, financial-domain evaluation, annotation QA, and preference data.
+- Maintaining [Awesome LLM Training Data v0.1.0](https://github.com/Alfonsobang/awesome-llm-training-data/releases/tag/v0.1.0), including an [LLM training data operating model](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/llm-training-data-operating-model.md), practitioner guides, and automated resource-format audits.
 - Tracking upstream documentation proposals for LLM data workflows:
   - [huggingface/datatrove#485](https://github.com/huggingface/datatrove/issues/485) - dataset-audit example using filters, rejected-sample capture, metadata, and summary stats.
   - [argilla-io/argilla#5861](https://github.com/argilla-io/argilla/issues/5861) - annotation QA workflow using guidelines, suggestions, filters, and adjudication.
@@ -35,3 +35,5 @@ My public work is intentionally centered on resources that can be reviewed, reus
 我关注 AI 训练数据与评测工程，重点方向包括 LLM 数据质量、标注系统、偏好数据、合成数据、数据治理，以及金融领域 AI 评测。
 
 我的公开项目会尽量使用可审查、可复用、可持续改进的公开资料，不包含私有公司数据、真实用户数据或专有工作流。
+
+当前主要维护 [Awesome LLM Training Data](https://github.com/Alfonsobang/awesome-llm-training-data)，并逐步沉淀 LLM 训练数据操作模型、质量清单和金融领域评测治理文档。
