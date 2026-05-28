@@ -20,7 +20,7 @@ My public work is intentionally centered on resources that can be reviewed, reus
 
 ## Current Public Work
 
-- Maintaining [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data), including a [Financial Agent Evaluation Agenda](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-agenda.md), [2026 Agent Evaluation Radar](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/2026-agent-evaluation-radar.md), [Claw-style agent evaluation notes](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/claw-style-agent-evaluation-notes.md), a [Harbor repeated-trial metric example](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-repeated-trial-metric), and automated resource-format audits.
+- Maintaining [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data), including a [Financial Agent Evaluation Agenda](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-agenda.md), [Financial Agent Evaluation Seed](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/financial-agent-eval-seed), [2026 Agent Evaluation Radar](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/2026-agent-evaluation-radar.md), [Claw-style agent evaluation notes](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/claw-style-agent-evaluation-notes.md), a [Harbor repeated-trial metric example](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-repeated-trial-metric), and automated resource-format audits.
 - Tracking upstream documentation proposals for LLM data workflows:
   - [huggingface/datatrove#485](https://github.com/huggingface/datatrove/issues/485) - dataset-audit example using filters, rejected-sample capture, metadata, and summary stats.
   - [argilla-io/argilla#5861](https://github.com/argilla-io/argilla/issues/5861) - annotation QA workflow using guidelines, suggestions, filters, and adjudication.
@@ -39,4 +39,4 @@ My public work is intentionally centered on resources that can be reviewed, reus
 
 我的公开项目会尽量使用可审查、可复用、可持续改进的公开资料，不包含私有公司数据、真实用户数据或专有工作流。
 
-当前主要维护 [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data)，并逐步沉淀金融 Agent 评测课题框架、2026 Agent Evaluation Radar、Claw-style Agent 评测笔记、Harbor 多次运行指标示例、LLM 训练数据操作模型和金融领域评测治理文档。
+当前主要维护 [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data)，并逐步沉淀金融 Agent 评测课题框架、金融 Agent 评测种子集、2026 Agent Evaluation Radar、Claw-style Agent 评测笔记、Harbor 多次运行指标示例、LLM 训练数据操作模型和金融领域评测治理文档。
