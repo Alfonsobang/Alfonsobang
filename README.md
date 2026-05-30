@@ -7,7 +7,7 @@ My public work is intentionally centered on resources that can be reviewed, reus
 ## Current Focus
 
 - Financial agent evaluation: search, exact data lookup, filing QA, toy backtesting, forecasting cutoffs, tool-use traces, and compliance-boundary tasks
-- 2026 agent evaluation: trajectory-aware grading, repeated-trial metrics, verifier evidence, and process-safety analysis
+- 2026 agent evaluation: Harbor, OpenClaw, ATIF trajectory auditing, repeated-trial metrics, verifier evidence, and process-safety analysis
 - Training data quality engineering for LLM systems
 - Dataset cleaning, deduplication, inspection, and documentation
 - Annotation quality, agreement, adjudication, and reviewer calibration
@@ -25,6 +25,7 @@ My public work is intentionally centered on resources that can be reviewed, reus
   - [Financial Agent Evaluation Roadmap](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-roadmap.md)
   - [Financial Agent Evaluation Seed](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/financial-agent-eval-seed)
   - [Harbor-style financial task templates](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/financial-agent-eval-seed/harbor-template)
+  - [Harbor OpenClaw financial ATIF trajectory audit](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-openclaw-finance-trajectory-audit)
   - [2026 Agent Evaluation Radar](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/2026-agent-evaluation-radar.md)
   - [Claw-style agent evaluation notes](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/claw-style-agent-evaluation-notes.md)
   - [Harbor repeated-trial metric example](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-repeated-trial-metric)
@@ -46,4 +47,4 @@ My public work is intentionally centered on resources that can be reviewed, reus
 
 我的公开项目会尽量使用可审查、可复用、可持续改进的公开资料，不包含私有公司数据、真实用户数据或专有工作流。
 
-当前主要维护 [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data)，并逐步沉淀金融 Agent 评测课题框架、路线图、公开数据任务规格、Harbor 风格任务模板、确定性 verifier、Claw-style 轨迹评测笔记和多次运行指标示例。
+当前主要维护 [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data)，并逐步沉淀金融 Agent 评测课题框架、路线图、公开数据任务规格、Harbor 风格任务模板、OpenClaw ATIF 轨迹审计、确定性 verifier 和多次运行指标示例。
