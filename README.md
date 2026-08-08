@@ -1,84 +1,71 @@
 # Alfonsobang
 
-I work on AI training data and financial-agent evaluation: data quality, annotation systems, preference data, synthetic fixtures, data governance, trajectory-aware evaluation, and public-safe financial AI benchmarks.
+I build public, reproducible evaluation infrastructure for financial research agents and LLM data quality.
 
-My public work is intentionally conservative. It uses public sources, synthetic fixtures, deterministic checks, machine-checkable metadata, and reusable documentation. It does not use private company data, real user data, proprietary workflows, investment advice, or trading signals.
+Current focus: **A-share research quality, point-in-time financial search, backtest forensics, probabilistic forecasting, and Harbor-compatible agent tasks.**
 
-## Current Thesis
+[Open the A-Share Agent Arena](https://alfonsobang.github.io/open-market-eval/) | [Audit a backtest](https://alfonsobang.github.io/open-market-eval/#preflight) | [Audit research evidence](https://alfonsobang.github.io/open-market-eval/research-audit.html) | [中文说明](#中文简介)
 
-Financial agents often fail outside ordinary Q&A benchmarks:
+[![OpenMarketEval A-Share Agent Arena](https://raw.githubusercontent.com/Alfonsobang/open-market-eval/main/docs/assets/a-share-arena-forensics.png)](https://alfonsobang.github.io/open-market-eval/)
 
-- selecting the wrong source,
-- mixing units, issuers, or reporting periods,
-- citing evidence that does not support the answer,
-- leaking post-cutoff information into forecasting tasks,
-- producing personalized financial advice,
-- and hiding unstable tool trajectories behind a fluent final answer.
+## OpenMarketEval
 
-I am building small, inspectable, public-safe evaluation assets for those failures.
+[OpenMarketEval](https://github.com/Alfonsobang/open-market-eval) is an A-share research quality gate and public Agent arena. The project is deliberately built around inspectable contracts and deterministic failure tests rather than investment claims.
 
-## Main Project
-
-[awesome-llm-training-data](https://github.com/Alfonsobang/awesome-llm-training-data) is being refocused from a broad LLM-data resource list into a practical portfolio for financial-agent evaluation and LLM data-quality engineering.
-
-Start here:
-
-- [Financial Agent Eval Seed](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/financial-agent-eval-seed) - Runnable starter kit with 10 public-safe finance tasks, synthetic fixtures, Harbor-style templates, deterministic verifiers, known-bad examples, and generated reports.
-- [Reference scorecard](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/examples/financial-agent-eval-seed/results/example-scorecard.md) - Generated scorecard for reference solutions.
-- [Known-bad scorecard](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/examples/financial-agent-eval-seed/results/bad-finance-agent-scorecard.md) - Generated scorecard showing red flags across source, citation, numeric, temporal, tool-trajectory, and safety dimensions.
-- [Scorecard builder](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/examples/financial-agent-eval-seed/build_scorecard.py) - Converts deterministic verifier reports into Markdown and JSON scorecards.
-- [Task zoo](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-task-zoo.md) - Implemented and next task families for financial-agent evaluation.
-
-One-command seed run:
+| Runnable surface | What it does | Public artifact |
+| --- | --- | --- |
+| Backtest Preflight | Checks eight A-share research-design risks locally or in CI | [Browser tool](https://alfonsobang.github.io/open-market-eval/#preflight) / [schema](https://github.com/Alfonsobang/open-market-eval/blob/main/schemas/backtest-contract.schema.json) |
+| Research Evidence Audit | Checks six financial-search provenance failure classes without uploading the packet | [Browser tool](https://alfonsobang.github.io/open-market-eval/research-audit.html) / [method](https://github.com/Alfonsobang/open-market-eval/blob/main/docs/research-evidence-audit.md) |
+| Backtest Forensics | Scores any Agent on 10 adversarial A-share cases with clean controls | [challenge](https://github.com/Alfonsobang/open-market-eval/tree/main/benchmarks/a-share-backtest-forensics) |
+| Harbor task pack | Packages forecasting, backtest audit, and financial-search evidence as three schema 1.3 tasks | [tasks](https://github.com/Alfonsobang/open-market-eval/tree/main/integrations/harbor) |
+| Live sealed forecasting | Commits predictions before resolution and scores calibration after outcomes | [current round](https://github.com/Alfonsobang/open-market-eval/tree/main/live/rounds/2026-08) |
 
 ```bash
-python examples/financial-agent-eval-seed/run_finance_eval.py
+git clone https://github.com/Alfonsobang/open-market-eval.git
+cd open-market-eval
+python -m open_market_eval audit-research-packet \
+  --packet examples/research-packets/leaky-packet.json \
+  --output runs/research-audit.json
 ```
 
-Scorecard generation:
+The current public release is [`v0.6.0`](https://github.com/Alfonsobang/open-market-eval/tree/v0.6.0). Synthetic fixtures are labeled as fixtures; public leaderboards remain empty until independently reproducible submissions exist.
 
-```bash
-python examples/financial-agent-eval-seed/build_scorecard.py --report examples/financial-agent-eval-seed/results/example-report.json --candidate reference-solutions --output-prefix examples/financial-agent-eval-seed/results/example-scorecard
-```
+## Research Thesis
 
-## Current Workstreams
+Financial Agents often fail outside ordinary Q&A benchmarks:
 
-- Financial-agent evaluation beyond static Q&A: public-source search, exact data lookup, filing-grounded QA, toy backtesting, cutoff discipline, risk calculation, tool-use traces, and compliance-boundary tasks.
-- Harbor / OpenCLAW / ATIF-style trajectory auditing: repeated attempts, verifier evidence, tool traces, and process-safety checks.
-- Financial RAG evaluation: retrieval, citation support, extraction, calculation, and refusal behavior.
-- Financial evaluation data governance: source manifests, benchmark cards, synthetic-data labels, redistribution boundaries, and leakage controls.
-- Annotation and preference-data quality for finance: evidence grounding, numeric correctness, safety boundaries, reviewer drift, and adjudication.
+- evidence appears after the claimed research cutoff;
+- citations exist but do not support the conclusion;
+- current universes or revised fundamentals leak into historical tests;
+- A-share T+1, suspension, and price-limit constraints are ignored;
+- unstable tool trajectories are hidden behind fluent final answers.
 
-## Selected Public Artifacts
+My open-source work turns those failure modes into portable schemas, frozen fixtures, deterministic verifiers, scorecards, and review contracts.
 
-- [Project Pages Index](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/README.md) - Guided map of the repo.
-- [Financial Agent Evaluation Portfolio](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-portfolio.md) - Multi-entry strategy for runnable tasks, scorecards, governance, Harbor-style packaging, and positioning.
-- [Financial Agent Evaluation Opportunity Map](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-evaluation-opportunity-map.md) - Where the project can contribute without overclaiming.
-- [Financial Agent Failure Gallery](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-agent-failure-gallery.md) - Failure modes that ordinary Q&A misses.
-- [Financial RAG Evaluation Playbook](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-rag-evaluation-playbook.md) - Evaluation checks for finance RAG workflows.
-- [Financial Data Governance Control Plane](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-data-governance-control-plane.md) - Source policy, packaging policy, cutoff, and redistribution controls.
-- [Harbor Finance Task Pack Blueprint](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/harbor-finance-task-pack-blueprint.md) - Public-safe task-pack shape for Harbor-style evaluation.
-- [Harbor OpenCLAW financial ATIF trajectory audit](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-openclaw-finance-trajectory-audit) - Synthetic trajectory audit with finance-specific safety and evidence checks.
+## Other Public Work
+
+- [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data) - Bilingual resource hub and runnable finance-evaluation seed.
+- [Financial RAG Evaluation Playbook](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-rag-evaluation-playbook.md) - Retrieval, citation, extraction, calculation, and refusal checks.
+- [Financial Data Governance Control Plane](https://github.com/Alfonsobang/awesome-llm-training-data/blob/main/docs/financial-data-governance-control-plane.md) - Source manifests, cutoff rules, packaging policy, and redistribution boundaries.
+- [Harbor/OpenCLAW trajectory audit](https://github.com/Alfonsobang/awesome-llm-training-data/tree/main/examples/harbor-openclaw-finance-trajectory-audit) - Synthetic finance-specific trace and safety audit.
 
 ## Upstream Discussions
 
-- [harbor-framework/harbor#1700](https://github.com/harbor-framework/harbor/issues/1700) - Claw-style trajectory-aware evaluation pattern with repeated attempts and safety evidence.
-- [huggingface/datatrove#485](https://github.com/huggingface/datatrove/issues/485) - Dataset-audit example using filters, rejected-sample capture, metadata, and summary stats.
-- [argilla-io/argilla#5861](https://github.com/argilla-io/argilla/issues/5861) - Annotation QA workflow using guidelines, suggestions, filters, and adjudication.
+- [harbor-framework/harbor#1700](https://github.com/harbor-framework/harbor/issues/1700) - Claw-style trajectory evaluation with repeated attempts and safety evidence.
+- [huggingface/datatrove#485](https://github.com/huggingface/datatrove/issues/485) - Dataset-audit workflow with rejected-sample capture and machine-readable summaries.
+- [argilla-io/argilla#5861](https://github.com/argilla-io/argilla/issues/5861) - Annotation QA workflow with suggestions, filters, and adjudication.
 
-## Open-source Principles
+## Engineering Principles
 
-- Prefer runnable examples over claims.
-- Prefer primary sources, deterministic tests, and machine-checkable metadata.
-- Treat financial-domain AI evaluation as a governance and evidence problem, not a leaderboard race.
+- Prefer runnable artifacts over positioning claims.
+- Prefer primary sources, point-in-time cutoffs, deterministic tests, and machine-checkable metadata.
+- Publish misses and empty leaderboards honestly.
 - Keep public examples free of private company data, real user data, proprietary workflows, investment advice, and trading signals.
 
 ## 中文简介
 
-我关注 AI 训练数据与金融 Agent 评测工程，重点包括数据质量、标注系统、偏好数据、合成数据、数据治理、轨迹评测，以及公开安全的金融领域 AI 评测。
+我关注金融研究 Agent 与 LLM 数据质量的可复现评测工程，当前重点是 A 股回测完整性、时点安全的金融搜索、证据引用、概率预测和 Harbor 任务。
 
-当前更明确的方向是：金融 Agent 的失败往往不在普通问答中暴露，而是在来源选择、数值单位、财务期间、未来数据泄漏、引用证据、合规边界和工具轨迹中暴露。
+目前的主项目是 [OpenMarketEval](https://github.com/Alfonsobang/open-market-eval)：它已经提供可在线运行的回测体检和研究证据审计、10 个 A 股回测取证案例、3 个 Harbor schema 1.3 任务，以及带提交前封存和事后评分的预测闭环。
 
-我正在把 [Awesome LLM Training Data & Agent Evaluation](https://github.com/Alfonsobang/awesome-llm-training-data) 从普通资料列表，重新聚焦为一个多入口的金融 AI 评测资产组合：可运行的 Financial Agent Eval Seed、金融 RAG 评测、数据治理、合成 fixture、标注与偏好质量、Harbor/OpenCLAW 风格轨迹审计，以及可生成的金融 Agent scorecard。
-
-公开内容不包含私有公司数据、真实用户数据、专有工作流、投资建议或交易信号。
+公开内容坚持使用公开来源、合成夹具、确定性检查和机器可读协议，不包含私有公司数据、真实用户数据、专有工作流、投资建议或交易信号。
