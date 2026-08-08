@@ -6,7 +6,7 @@ Current focus: **A-share research quality, point-in-time financial search, backt
 
 [Open the A-Share Agent Arena](https://alfonsobang.github.io/open-market-eval/) | [Audit a backtest](https://alfonsobang.github.io/open-market-eval/#preflight) | [Audit research evidence](https://alfonsobang.github.io/open-market-eval/research-audit.html) | [中文说明](#中文简介)
 
-[![OpenMarketEval A-Share Agent Arena](https://raw.githubusercontent.com/Alfonsobang/open-market-eval/main/docs/assets/a-share-arena-forensics.png)](https://alfonsobang.github.io/open-market-eval/)
+[![OpenMarketEval A-Share Research Quality Gate](https://raw.githubusercontent.com/Alfonsobang/open-market-eval/main/docs/assets/open-market-eval-social-preview-v2.png)](https://alfonsobang.github.io/open-market-eval/)
 
 ## OpenMarketEval
 
